@@ -14,10 +14,12 @@ import {
   CONFIRM_LOGIN,
   CONFIRM_LOGIN_SUCCESS,
   CONFIRM_LOGIN_FAILURE
-} from './reducers/auth'
+} from '../reducers/auth.js'
 
 import { Alert } from 'react-native'
-import { Auth } from 'aws-amplify'
+import Amplify, { Auth } from 'aws-amplify'
+// import config from '../aws-exports.js'
+// Amplify.configure(config);
 
 function signUp() {
   return {

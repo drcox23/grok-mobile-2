@@ -20,11 +20,11 @@ class GettingStarted extends React.Component {
     isLoading: true
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     StatusBar.setHidden(true)
-    const user = await Auth.currentAuthenticatedUser()
+    const user = Auth.currentAuthenticatedUser()
       .then(data => {
-        console.log("component mount on started screen", data)
+        // console.log("component mount on started screen", data)
         this.setState({ user, isLoading: false })
       })  
       .catch(err => {
@@ -33,10 +33,10 @@ class GettingStarted extends React.Component {
       })
   }
 
-  async componentWillReceiveProps(nextProps) {
-     const user = await Auth.currentAuthenticatedUser()
+  componentWillReceiveProps(nextProps) {
+     const user = Auth.currentAuthenticatedUser()
       .then(data => {
-        console.log("will mount Auth data", data)
+        // console.log("will mount Auth data", data)
         this.setState({ user })
       })
       .catch(err => {
