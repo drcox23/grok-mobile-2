@@ -1,11 +1,11 @@
 import React from 'react'
 // import { AppRegistry } from 'react-native';
-import  App  from './src/App';
+import  GettingStarted  from './src/screens/GetStarted.js';
 
 // redux
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import { combineReducer } from './src/reducers/reducers.js'
+import combineReducer from './src/reducers/reducers.js'
 import thunk from 'redux-thunk'
 
 // Amplify
@@ -19,15 +19,15 @@ const store = createStore(combineReducer, applyMiddleware(thunk));
 
 
 // App
-class RootComponent extends React.Component{
+class App extends React.Component{
  render(){
    return(
   <Provider store={store}>
-    <App />
+    <GettingStarted />
   </Provider>
     )
   }
 }
 
 // AppRegistry.registerComponent('grok-mobile', () => ReduxApp);
-export default RootComponent
+export default App
