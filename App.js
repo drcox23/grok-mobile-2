@@ -1,6 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+// Auth configurations
+import Amplify, { Auth } from 'aws-amplify'
+import config from './src/aws-exports'
+Amplify.configure(config)
+
+
+
 export default class App extends React.Component {
   render() {
     return (

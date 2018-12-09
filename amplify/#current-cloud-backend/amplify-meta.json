@@ -1,14 +1,35 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "grokmobile2-20181208185910-authRole",
-            "UnauthRoleArn": "arn:aws:iam::104234874083:role/grokmobile2-20181208185910-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::104234874083:role/grokmobile2-20181208185910-authRole",
-            "Region": "us-west-2",
-            "DeploymentBucketName": "grokmobile2-20181208185910-deployment",
-            "UnauthRoleName": "grokmobile2-20181208185910-unauthRole",
-            "StackName": "grokmobile2-20181208185910",
-            "StackId": "arn:aws:cloudformation:us-west-2:104234874083:stack/grokmobile2-20181208185910/2aba1560-fb6f-11e8-8aae-062d9ae1b752"
-        }
-    }
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "grokmobile2-20181208185910-authRole",
+			"UnauthRoleArn": "arn:aws:iam::104234874083:role/grokmobile2-20181208185910-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::104234874083:role/grokmobile2-20181208185910-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "grokmobile2-20181208185910-deployment",
+			"UnauthRoleName": "grokmobile2-20181208185910-unauthRole",
+			"StackName": "grokmobile2-20181208185910",
+			"StackId": "arn:aws:cloudformation:us-west-2:104234874083:stack/grokmobile2-20181208185910/2aba1560-fb6f-11e8-8aae-062d9ae1b752"
+		}
+	},
+	"auth": {
+		"cognitoca1d8c0d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/grokmobile2-20181208185910-deployment/amplify-cfn-templates/auth/cognitoca1d8c0d-cloudformation-template.yml",
+				"logicalId": "authcognitoca1d8c0d"
+			},
+			"lastPushTimeStamp": "2018-12-09T05:06:02.345Z",
+			"output": {
+				"AppClientSecret": "1qb98fal1j4uodkc1kl6qthfl2fj9petk078msdsh434t1ug5mnf",
+				"UserPoolId": "us-west-2_w6zQdLpj4",
+				"AppClientIDWeb": "66tjjb2puvtnqvvut8lek9v56n",
+				"AppClientID": "2punmqd1j06q3677grj1tpsrq1",
+				"IdentityPoolId": "us-west-2:eda13ac3-9231-49f3-a82e-7b846d39b880",
+				"IdentityPoolName": "cognitoca1d8c0d_identitypool_ca1d8c0d",
+				"UserPoolName": "cognitoca1d8c0d_userpool_ca1d8c0d"
+			},
+			"lastPushDirHash": "G99U05hZ7RnjybcsCMA1KQ9xOo0="
+		}
+	}
 }
