@@ -1,15 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-// navigation
-import AppNav from './src/Nav/AppNavigator.js'
-
-class App extends React.Component {
+class SignUp extends React.Component {
   render() {
+    console.log("SIGNUP")
     return (
       <View style={styles.container}>
-        {/* <Text>Open up App.js to start working on your app!</Text> */}
-        <AppNav />
+        <Text>SIGN UP SCREEN</Text>
       </View>
     );
   }
@@ -24,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App
+export default SignUp
