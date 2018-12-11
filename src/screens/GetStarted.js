@@ -6,26 +6,36 @@ import { connect } from 'react-redux'
 
 // Auth configurations
 import Amplify, { Auth } from 'aws-amplify'
-import config from '../aws-exports'
-Amplify.configure(config)
+import { Authenticator } from 'aws-amplify-react-native'
+
 
 //Start Screens
 import Tabs from './Auth/Tabs.js'
 import Nav from '../components/Nav/Nav.js'
+import Home from './Home/Home'
 
 
 class GettingStarted extends React.Component {
   state = {
-    user: {},
-    isLoading: true
+    username: {},
+    isLoading: true,
+    isAuthenticated: false
   }
 
   componentDidMount() {
     StatusBar.setHidden(true)
-    const user = Auth.currentAuthenticatedUser()
+    Auth.currentUserInfo()
       .then(data => {
-        // console.log("component mount on started screen", data)
-        this.setState({ user, isLoading: false })
+        console.log("component mount on started screen", data)
+      })
+      .then(data => {
+        console.log("can i see this?", data)
+        if(data.username){
+        this.setState({ username: data.username, isLoading: false, isAuthenticated: true })
+        } else {
+          console.log("HUH", this.state)
+          return this.state
+        }
       })  
       .catch(err => {
         console.log("Auth erron on mount", err)
@@ -46,18 +56,13 @@ class GettingStarted extends React.Component {
   }
 
   render() {
-    if (this.state.isLoading) return null
-    let loggedIn = false
-    if (this.state.user.username) {
-      loggedIn = true
-    }
-    if (loggedIn) {
-      return (
-        <Nav />
-      )
-    }
     return (
-      <Tabs />
+        <View>
+          <Home />
+            {/* <Tabs /> */}
+        {/* <Text>ALOHA!!!!!!!!!!!!!!!!!!</Text> */}
+        
+        </View>
     )
   }
 }

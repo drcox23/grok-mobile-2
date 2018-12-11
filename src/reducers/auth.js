@@ -38,7 +38,7 @@ const initialState = {
   confirmSignUpErrorMessage: ''
 }
 
-export default (state = initialState, action) => {
+ const authReducers = (state = initialState, action) => {
   switch(action.type) {
     case SHOW_SIGN_IN_CONFIRMATION_MODAL:
       return {
@@ -94,6 +94,7 @@ export default (state = initialState, action) => {
         signInError: false
       }
     case LOG_IN_SUCCESS:
+    console.log("LOGIN REDUCER", action)
       return {
         isAuthenticating: false,
         user: action.user,
@@ -132,3 +133,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export default authReducers

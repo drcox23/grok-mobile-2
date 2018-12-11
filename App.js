@@ -10,18 +10,19 @@ import combineReducer from './src/reducers/reducers'
 import thunk from 'redux-thunk'
 
 // Amplify
-import config from './src/aws-exports.js'
+import { Authenticator } from 'aws-amplify-react-native'
+import config from './aws-config.js'
 import Amplify from 'aws-amplify'
 Amplify.configure({
   Auth: {
     // REQUIRED - Amazon Cognito Identity Pool ID
-    identityPoolId: 'cognito15eca626_identitypool_15eca626', 
+    identityPoolId: config.identityPoolId, 
     // REQUIRED - Amazon Cognito Region
-    region: 'us-west-2', 
+    region: config.region, 
     // OPTIONAL - Amazon Cognito User Pool ID
-    userPoolId: 'us-west-2_y4Nh2Bq2V',
+    userPoolId: config.userPoolId,
     // OPTIONAL - Amazon Cognito Web Client ID
-    userPoolWebClientId: '47jjnqt5san9isfcmqddl32ajj', 
+    userPoolWebClientId: config.userPoolWebClientId, 
   }
 });
 

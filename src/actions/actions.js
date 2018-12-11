@@ -84,8 +84,9 @@ export function logOut() {
 }
 
 function logInSuccess(user) {
+  console.log("HITTING THIS???")
   return {
-    type: LOG_IN_SUCCESS,
+    type: CONFIRM_LOGIN_SUCCESS,
     user: user
   }
 }
@@ -99,11 +100,12 @@ function logInFailure(err) {
 
 export function authenticate(username, password) {
   return (dispatch) => {
-    dispatch(logIn())
+    // dispatch(logIn())
     Auth.signIn(username, password)
       .then(user => {
+        console.log("HUH", user)
         dispatch(logInSuccess(user))
-        dispatch(showSignInConfirmationModal())
+        // dispatch(showSignInConfirmationModal())
       })
       .catch(err => {
         console.log('errror from signIn: ', err)

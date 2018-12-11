@@ -9,9 +9,11 @@ import { combineReducer } from './src/reducers/reducers.js'
 import thunk from 'redux-thunk'
 
 // Amplify
-import config from './src/aws-exports.js'
+import config from './aws-config.js'  
 import Amplify from 'aws-amplify'
 Amplify.configure(config);
+
+
 
 
 
