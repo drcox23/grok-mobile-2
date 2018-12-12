@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class Home extends React.Component {
   render() {
+    console.log("Hit the Home Screen")
     return (
       <View style={styles.container}>
         <Text>HOME SCREEN</Text>

@@ -19,7 +19,7 @@ class AppLoadingScreen extends React.Component {
   constructor() {
     super();
     this.state = {
-      isAuthenticated: true
+      isAuthenticated: false
     }
 
   }

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class SignUp extends React.Component {
   render() {
-    console.log("SIGNUP")
+    console.log("HIT SIGNUP")
     return (
       <View style={styles.container}>
         <Text>SIGN UP SCREEN</Text>
